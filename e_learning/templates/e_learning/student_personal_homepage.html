@@ -1,0 +1,40 @@
+{% extends 'student_base.html' %}
+
+{% load static %}
+{% block head_title %}Start-Learning{% endblock %}
+{% block content %}
+<nav aria-label="breadcrumb" class="mt-2 bg-white">
+    <ol class="breadcrumb" style="background-color: #fdfdff !important;">
+      <li class="breadcrumb-item"><a href="{% url 'e_learning:home' %}" class="text-dark">Home</a>
+      </li>
+      <li class="breadcrumb-item active text-primary" aria-current="page"><a href="{% url 'e_learning:my_subjects' %}">My Subjects</a></li>
+    </ol>
+ </nav>
+<div class="container-fluid">
+<div class="container-fluid mt-3">
+	<div class="card shadow-sm mb-5 pb-4 h-100">
+		<h6 class="text-dark pt-4 pl-4 pb-1" style="font-size: 18px;"><i class="fas fa-book-open fa-1x ml-2">&nbsp;&nbsp;My Subjects</i></h6>
+		<div class="row p-3">
+			{% for my_subject in student_subjects %}
+			<div class="col-md-3 pb-4">
+				<div class="card shadow w-100">
+						<div class="text-center mt-2">
+						<img class="rounded-circle" src="{% static 'e_learning/image/logo.PNG' %}" class="card-img-top" width="80%" height="100%" alt="...">
+						</div>
+						<div class="card-body text-center">
+						<h6 class="card-title text-primary"><b>{{my_subject.subject}}</b></h6>
+						<h6 class="text-center"><b>S.1</b></h6>
+						<hr>
+						<p class="text-muted text-center">
+						By: {{my_subject.teacher.user}}
+						</p>
+						<a href="{% url 'e_learning:subject_topic' %}" class="btn btn-primary hero-button plat btn-sm w-75 mt-1" style="border-radius: 18px;">Read&nbsp;</a>
+					</div>
+				</div>
+			</div>
+			{% endfor %}
+		</div>
+	</div>
+</div>
+</div>
+{% endblock %}

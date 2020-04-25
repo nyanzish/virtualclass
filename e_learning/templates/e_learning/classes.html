@@ -1,0 +1,75 @@
+{% extends 'teacher_base.html' %}
+
+{% load static %}
+
+{% block head_title %}Start-Learning{% endblock %}
+{% block content %}
+    <!-- Begin Page Content -->
+
+<div class="container-fluid mt-5">
+    <h6>
+        Select class to upload content
+    </h6>
+</div>
+<div class="container mt-5">
+    <ul>
+    
+        <li class='mb-3' >
+            <form id="form1" action="{% url 'e_learning:upload' %}" method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                <input type="hidden" name='subject_id' value="{{subject_id}}">
+                <input type="hidden" name="class_id" value="1">
+                <!--<input type="submit" value="S1" class="btn btn-primary mb-4" name="register" style="border-radius: 17px;" />-->
+                <a type="submit" onclick="document.getElementById('form1').submit();" >S1</a>
+            </form>
+        </li>
+        <li>
+            <form id="form2" action="{% url 'e_learning:upload' %}" method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                <input type="hidden" name='subject_id' value="{{subject_id}}">
+                <input type="hidden" name="class_id" value="2">
+            </form>
+            <a type="submit" onclick="document.getElementById('form2').submit();" >S2</a>
+        </li>
+        <li class='mt-3' >
+            <form id="form3" action="{% url 'e_learning:upload' %}" method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                <input type="hidden" name='subject_id' value="{{subject_id}}">
+                <input type="hidden" name="class_id" value="3">
+            </form>
+            <a type="submit" onclick="document.getElementById('form3').submit();" >S3</a>
+        </li>
+        <li class='mt-3' >
+            <form id="form4" action="{% url 'e_learning:upload' %}" method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                <input type="hidden" name='subject_id' value="{{subject_id}}">
+                <input type="hidden" name="class_id" value="4">
+            </form>
+            <a type="submit" onclick="document.getElementById('form4').submit();" >S4</a>
+        </li>
+        <li class='mt-3'>
+            <form id="form5" action="{% url 'e_learning:upload' %}" method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                <input type="hidden" name='subject_id' value="{{subject_id}}">
+                <input type="hidden" name="class_id" value="5">
+            </form>
+            <a type="submit" onclick="document.getElementById('form5').submit();" >S5</a>
+        </li>
+        <li class='mt-3'>
+            <form id="form6" action="{% url 'e_learning:upload' %}" method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                <input type="hidden" name='subject_id' value="{{subject_id}}">
+                <input type="hidden" name="class_id" value="6">
+            </form>
+            <a type="submit" onclick="document.getElementById('form6').submit();" >S6</a>
+            
+        </li>
+        
+    </ul>
+
+</div>
+<!-- /.container-fluid -->
+
+  
+
+{% endblock %}

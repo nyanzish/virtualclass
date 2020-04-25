@@ -1,0 +1,50 @@
+{% extends 'student_base.html' %}
+
+{% load static %}
+{% block head_title %}Start-Learning{% endblock %}
+{% block content %}
+<nav aria-label="breadcrumb" class="mt-2">
+    <ol class="breadcrumb" style="background-color: #fdfdff !important;">
+      <li class="breadcrumb-item" aria-current="page"><a class="text-dark" href="{% url 'e_learning:home' %}">Home</a>
+      </li>
+      <li class="breadcrumb-item active text-primary" ><a href="{% url 'e_learning:payment_details' %}" >Payment Details</a></li>
+    </ol>
+ </nav>
+<div class="container mb-3 mt-1">
+	<div class="row mt-2 justify-content-center">
+		<div class="col-md-10">
+			<div class="card shadow mb-3">
+				<div class="card-body">
+					<h5 class="text-muted mt-1 ml-5"><i class="fas fa-file-invoice"></i>&nbsp;My Invoices</h5>
+					<div class="row justify-content-center">
+					<div class="col-md-11">
+					<div class="table-responsive">
+					  <table class="table">
+					  <thead class="text-center">
+			            <tr>
+			              <th>Invoice No.</th>
+			              <th>Pay Date</th>
+			              <th>Net Amount</th>
+			              <th>Tax</th>
+			              <th>Total</th>
+			            </tr>
+			          </thead>
+			          <tbody class="text-center">
+			            <tr>
+			              <td>26389100</td>
+			              <td>2011/04/25</td>
+			              <td>6000</td>
+			              <td>0.0</td>
+			              <td>6000</td>
+			            </tr>
+			          </tbody>
+					  </table>
+					</div>
+				   </div>
+				  </div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}
